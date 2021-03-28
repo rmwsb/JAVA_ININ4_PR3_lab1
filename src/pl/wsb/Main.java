@@ -1,6 +1,7 @@
 package pl.wsb;
 
 import java.util.Date;
+import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
@@ -16,6 +17,8 @@ public class Main {
 
         Human human1 = new Human("Adam", "Kowalski", 26);
         Human human2 = new Human ("Zofia", "Nowak", 66);
+        Human human3 = new Human("Zbigniew", "Dzban", 55);
+        Human human4 = new Human ("Karolina", "Pisak", 33);
 
         Phone phone1 = new Phone("Samsung", "Galaxy S10", 6.1, 0.157);
         Phone phone2 = new Phone("Samsung", "Galaxy S20", 6.2, 0.163);
@@ -43,5 +46,16 @@ public class Main {
                 .append(humanWithMaxAge.age);
         System.out.println(humanWithMaxAgeDescription);
         System.out.println("\n----------------\n");
+
+        ArrayList<Human> humansList = new ArrayList<>();
+        humansList.add(human1);
+        humansList.add(human2);
+        humansList.add(human3);
+        humansList.add(human4);
+
+        System.out.println("Humans list:");
+        for (Human human : humansList) {
+            System.out.println(human.firstName + " " + human.lastName + ", age: " + human.age);
+        }
     }
 }
